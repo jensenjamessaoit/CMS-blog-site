@@ -1,0 +1,25 @@
+<div>
+    <div>
+        <h2>{{title}}</h2>
+        <h3>By {{user.username}} created on {{createdAt}}</h3>
+        <p>{{content}}</p>
+    </div>
+    <div>
+        <form class="comment-form">
+            <div>
+                <input placeholder="Enter comment here" type="text" class="comment-input">
+            </div>
+            <div>
+                <button type="submit" blogpost-id="{{id}}">comment</button>
+            </div>
+        </form>
+        <h3>Comments:</h3>
+        {{#each comments as |comment|}}
+            <div>
+                <h4>{{comment.user.username}}</h4>
+                <h5>created on {{format_date comment.createdAt}}</h5>
+                <p>{{comment.comment}}</p>
+            </div>
+        {{/each}}
+    </div>
+</div>

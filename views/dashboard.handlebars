@@ -1,0 +1,26 @@
+<div>
+    <div class="newpost">
+        <button>+New Post</button>
+        <form id="newpost-form" class="hidden">
+            <div>
+                <input placeholder="Title" type="text" class="newpost-title">
+            </div>
+            <div>
+                <input placeholder="Content" type="text" class="newpost-content">
+            </div>
+        </form>
+    </div>
+    <div class="dashboard-blogs">
+        <h2>Blogs</h2>
+        {{#each blogposts as |blogpost|}}
+            <div>
+                <h4>
+                    <a href="/blogpost/{{blogpost.id}}">{{blogpost.title}}</a>
+                </h4>
+                <h6>{{blogpost.createdAt}}</h6>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+<script src="../public/js/dashboard.js"></script>
