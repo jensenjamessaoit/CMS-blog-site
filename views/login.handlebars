@@ -1,45 +1,37 @@
-<div>
+<div style="margin-left: 12px;">
     {{!-- login --}}
-    <div>
-        <h2>login</h2>
-
-        {{!-- form --}}
+    <div style="margin-top: 24px;">
+        <h2>Login</h2>
         <form id="login-form">
-            <div>
-                <label for="username-login">username:</label>
-                <input type="text" id="username-login" />
+            <div class="mb-3">
+                <label for="username-login" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username-login" style="width: 360px">
             </div>
-            <div>
-                <label for="passowrd-login">passowrd:</label>
-                <input type="password" id="password-login" />
+            <div class="mb-3">
+                <label for="passowrd-login" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password-login" style="width: 360px">
             </div>
-            {{!-- submit button --}}
-            <div>
-                <button type="submit">login</button>
-            </div>
+            <button type="submit" class="btn btn-primary">login</button>
         </form>
     </div>
     
     {{!-- signup --}}
-    <div>
-        <h2>signup</h2>
-
-        {{!-- form --}}
+    <div style="margin-top: 24px">
+        <h2>Signup</h2>
         <form id="signup-form">
-            <div>
-                <label for="username-signup">username:</label>
-                <input type="text" id="username-signup" />
+            <div class="mb-3">
+                <label for="username-signup" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username-signup" style="width: 360px">
             </div>
-            <div>
-                <label for="passowrd-signup">passowrd:</label>
-                <input type="password" id="password-signup" />
+            <div class="mb-3">
+                <label for="passowrd-signup" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password-signup" style="width: 360px">
             </div>
-            {{!-- submit button --}}
-            <div>
-                <button type="submit">signup</button>
-            </div>
+            <button type="submit" class="btn btn-primary">signup</button>
         </form>
     </div>
 </div>
+
+
 
 <script src="/js/login.js"></script>
