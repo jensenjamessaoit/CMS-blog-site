@@ -1,12 +1,14 @@
 <div>
     <div class="newpost">
-        <button>+New Post</button>
-        <form id="newpost-form" class="hidden">
+        <form id="newpost-form">
             <div>
                 <input placeholder="Title" type="text" class="newpost-title">
             </div>
             <div>
                 <input placeholder="Content" type="text" class="newpost-content">
+            </div>
+            <div>
+                <button type="submit" id="newpost-submit">+New Post</button>
             </div>
         </form>
     </div>
@@ -19,8 +21,24 @@
                 </h4>
                 <h6>{{blogpost.createdAt}}</h6>
             </div>
+            <div>
+                <button class="edit-button">edit</button>
+                <form blogpost-id="{{blogpost.id}}" id="editpost-form" style="display: none">
+                    <div>
+                        <label for="title">Title:</label>
+                        <input type="text" value="{{blogpost.title}}" class="editpost-title">
+                    </div>
+                    <div>
+                        <label for="content">Content:</label>
+                        <input type="text" value="{{blogpost.content}}" class="editpost-content">
+                    </div>
+                    <div>
+                        <button type="submit" blogpost-id="{{blogpost.id}}">submit changes</button>
+                    </div>
+                </form>
+            </div>
         {{/each}}
     </div>
 </div>
 
-<script src="../public/js/dashboard.js"></script>
+<script src="/js/dashboard.js"></script>

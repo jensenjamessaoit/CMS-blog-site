@@ -45,8 +45,9 @@ router.get('/blogpost/:id', withAuth, async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['username'],
+                    attributes: ['username', 'id'],
                 }
+
             ],
         });
 
@@ -62,13 +63,18 @@ router.get('/blogpost/:id', withAuth, async (req, res) => {
             ]
         });
 
+        console.log(blogpostData + commentData);
+
         const blogpost = blogpostData.get({ plain: true});
         const comments = commentData.map((comment) => comment.get({ plain: true}));
+
+
 
         res.render('blogpost', {
             ...blogpost,
             comments,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            uid: req.session.user_id
         })
     } catch (err) {
         res.status(500).json(err);
