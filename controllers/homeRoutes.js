@@ -25,6 +25,7 @@ router.get('/', async (req, res) => {
                     attributes: ['username'],
                 },
             ],
+            order: [['createdAt', 'DESC']]
         });
 
         const blogposts = blogpostData.map((blogpost) => blogpost.get({ plain: true}));
@@ -60,7 +61,8 @@ router.get('/blogpost/:id', withAuth, async (req, res) => {
                     model: User,
                     attributes: ['username']
                 }
-            ]
+            ],
+            order: [['createdAt', 'DESC']]
         });
 
         console.log(blogpostData + commentData);
@@ -81,13 +83,15 @@ router.get('/blogpost/:id', withAuth, async (req, res) => {
     }
 });
 
+//dashboard
 router.get('/dashboard', withAuth, async (req, res) => {
     try{
         //blogposts of user
         const blogpostData = await BlogPost.findAll({
             where: {
                 user_id: req.session.user_id
-            }
+            },
+            order: [['createdAt', 'DESC']]
         });
 
         const blogposts = blogpostData.map((blogpost) => blogpost.get({ plain: true }));

@@ -1,29 +1,29 @@
-<div>
-    <div class="newpost">
+<div style="margin-left: 12px;">
+    <div style="margin-top: 16px; margin-bottom: 32px">
+        <h2>New Post</h2>
         <form id="newpost-form">
-            <div>
-                <input placeholder="Title" type="text" class="newpost-title">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="newpost-title">
             </div>
-            <div>
-                <input placeholder="Content" type="text" class="newpost-content">
+            <div class="mb-3">
+                <label for="content" class="form-label">Content</label>
+                <input type="text" class="form-control" id="newpost-content">
             </div>
-            <div>
-                <button type="submit" id="newpost-submit">+New Post</button>
-            </div>
+            <button type="submit" class="btn btn-primary">+New Post</button>
         </form>
     </div>
-    <div class="dashboard-blogs">
+    <div class="dashboard-blogs" style="margin-bottom: 32px;">
         <h2>Blogs</h2>
         {{#each blogposts as |blogpost|}}
-            <div>
+            <div class="card" style="max-width: 360px; padding: 12px 12px 12px 12px; margin-bottom: 12px">
                 <h4>
                     <a href="/blogpost/{{blogpost.id}}">{{blogpost.title}}</a>
                 </h4>
-                <h6>{{blogpost.createdAt}}</h6>
-            </div>
-            <div>
-                <button class="edit-button">edit</button>
-                <form blogpost-id="{{blogpost.id}}" id="editpost-form" style="display: none">
+                <h6>Created on {{format_date blogpost.createdAt}}</h6>
+            
+                <button class="edit-button btn btn-primary" style="max-width: 64px;">edit</button>
+                {{!-- <form blogpost-id="{{blogpost.id}}" id="editpost-form" style="display: none">
                     <div>
                         <label for="title">Title:</label>
                         <input type="text" value="{{blogpost.title}}" class="editpost-title">
@@ -35,7 +35,7 @@
                     <div>
                         <button type="submit" blogpost-id="{{blogpost.id}}">submit changes</button>
                     </div>
-                </form>
+                </form> --}}
             </div>
         {{/each}}
     </div>

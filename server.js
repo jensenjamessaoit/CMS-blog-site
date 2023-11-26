@@ -20,7 +20,7 @@ const hbs = exphbs.create({
 const sess = {
     secret: 'secret that is secret af',
     cookie: {
-        maxAge: 300000,
+        maxAge: 1800000,
         httpOnly: true,
         secure: false,
         sameSite: 'strict',
