@@ -3,7 +3,7 @@
   "description": "MVC for blog site",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon --ext js,handlebars server.js"
   },
   "author": "jensenjamessaoit",
   "license": "MIT",
